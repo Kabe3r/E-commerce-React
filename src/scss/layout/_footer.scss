@@ -1,0 +1,104 @@
+@use '../util/' as f;
+
+.footer {
+      margin-top: f.rem(80);
+      background: var(--clr-primary);
+      animation: scaleY 1s ease-in-out;
+      transform-origin: 0 100%;
+
+      
+      @include f.breakpoint(medium) {
+            margin-top: f.rem(160);
+                              
+      }
+      
+      &--news {
+            color: var(--clr-white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: f.rem(100);
+            text-align: center;
+
+            h3 {
+                  font-size: f.rem(19.2);
+                  letter-spacing: -0.059em;
+                  line-height: 1.5;
+
+                  span {
+                        display: flex;
+                        justify-content: center;
+                  }
+            }
+            
+            @include f.breakpoint(xsmall) {
+                  h3 {
+                        font-size: f.rem(24);
+                  }
+            }
+            
+            @include f.breakpoint(medium) {
+                  height: f.rem(150);
+                  h3 {
+                        font-size: f.rem(32);
+                  }
+            }
+      }
+      
+      &--container {
+            background: var(--clr-secondary);
+            color: var(--clr-white);
+            animation: scaleY 2s ease-in-out;
+            transform-origin: 0 100%;
+            padding: f.rem(128) 0 f.rem(16) 0;
+            
+            &--content {
+                  display: flex;
+                  justify-content: space-around;
+                  flex-wrap: wrap;
+                  
+                  @include f.breakpoint-down(medium) {
+                        flex-direction: column-reverse;
+                        align-items: center;
+                        text-align: center;
+
+                        p {
+                              padding-top: 18px;
+                        }
+                  }
+                  
+                  p {
+                        font-size: f.rem(16);
+                        letter-spacing: -0.033em;
+                        line-height: 1.55;
+                        width: 20%;
+
+                        @include f.breakpoint(xsmall) {
+                              font-size: f.rem(19.2);
+                        }
+                  }
+            }
+            &--copyright {
+                  margin-top: f.rem(128);
+                  display: flex;
+                  justify-content: space-around;
+                  flex-direction: row-reverse;
+                  color: var(--clr-footer);
+
+                  @include f.breakpoint-down(medium) {
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+
+                        small:nth-child(2) {
+                              margin-top: f.rem(14);
+                        }
+                  }
+
+                  small {
+                        text-align: center;
+                        font-size: f.rem(16);
+                  }
+            }
+      }
+}

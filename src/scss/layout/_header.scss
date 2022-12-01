@@ -1,0 +1,25 @@
+@use '../util' as h;
+
+header {
+      background-color: var(--clr-secondary);
+      color: var(--clr-white);
+      padding: h.rem(28.8);
+      text-align: center;
+      z-index: 3;
+      font-size: h.rem(16);
+      position: relative;
+
+      @include h.breakpoint(xlarge) {
+            padding: h.rem(40);
+
+      }
+
+      p {
+            letter-spacing: -0.033em;
+            line-height: 1.567;
+      }
+      strong {
+            font-weight: 700;
+      }
+}
+

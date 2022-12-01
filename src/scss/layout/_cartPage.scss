@@ -1,0 +1,192 @@
+@use '../util/' as c;
+
+.cart {
+      margin-top: c.rem(300);
+      
+      &--empty {
+            text-align: center;
+
+            h2 {
+                  margin-bottom: c.rem(32);
+                  text-transform: none;
+            }
+            button {
+                  margin-inline: auto;
+            }
+      }
+}
+
+.page {
+      &--content {
+            hr {
+                  margin-bottom: c.rem(32);
+            }
+            &--link {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  margin-top: c.rem(32);
+                  
+                  @include c.breakpoint(medium) {
+                        justify-content: space-around;
+                        flex-direction: row;
+                  }
+
+                  .clear-btn {
+                        padding: c.rem(8) c.rem(12);
+                        letter-spacing: c.rem(1.28);
+                        font-weight: 400;
+                        border-radius: var(--border-radius);
+                        background: var(--clr-black);
+                        color: var(--clr-white);
+
+                        @include c.breakpoint-down(medium) {
+                              margin-top: c.rem(32);
+                        }
+                  }
+            }
+
+            &--columns {
+                  display: none;
+
+                  @include c.breakpoint(medium) {
+                        display: block;
+
+                        .content {
+                              display: grid;
+                              grid-template-columns: c.rem(316) 1fr 1fr 1fr auto;
+                              justify-items: center;
+                              column-gap: c.rem(16);
+
+                              h5 {
+                                    font-weight: 400;
+                              }
+                              span {
+                                    width: c.rem(32);
+                                    height: c.rem(32);
+                              }
+                              hr {
+                                    margin-top: c.rem(16);
+                                    margin-bottom: c.rem(48);
+                              }
+                        }
+                  }
+
+            }
+
+            &--items {
+                  display: grid;
+                  gap: c.rem(48) c.rem(16);
+                  justify-items: center;
+                  margin-bottom: c.rem(32);
+                  align-items: center;
+                  justify-content: center;
+
+                  .item {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        
+                        @include c.breakpoint(medium) {
+                              flex-direction: row;
+                        }
+
+                        img {
+                              display: block;
+                              width: 45%;
+                              border-radius: var(--border-radius);
+                              object-fit: cover;
+
+                              @include c.breakpoint(medium) {
+                                    width: 25%;
+                              }
+                        }
+                        &--next {
+                              padding-left: c.rem(16);
+                              h5 {
+                                    font-size: c.rem(16);
+                                    margin-top: c.rem(8);
+                              }
+                              .color {
+                                    color: var(--clr-primary);
+                                    font-size: c.rem(16);
+                                    letter-spacing: c.rem(1.28);
+                                    margin-top: c.rem(8);
+                                    text-transform: capitalize;
+                                    
+                                    span {
+                                          display: inline-block;
+                                          width: c.rem(8);
+                                          height: c.rem(8);
+                                          background: var(--clr-red);
+                                          margin-left: c.rem(8);
+                                          border-radius: var(--border-radius);
+                                    }
+                              }
+                        }
+      
+                  }
+
+                  .subtotal, .price {
+                        display: none;
+                 }
+
+                 @include c.breakpoint(medium) {
+
+                  grid-template-columns: c.rem(316) 1fr 1fr 1fr auto;
+      
+                  .subtotal, .price {
+                        display: block;
+                        margin-bottom: 0;
+                        color: var(--clr-primary);
+                        font-weight: 400;
+                        font-size: c.rem(16);
+                  }
+                  .price-small {
+                        display: none;
+                  }
+
+                 }
+             
+                  .remove-btn {
+                        color: var(--clr-red);
+                        letter-spacing: c.rem(1.28);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: c.rem(20);
+                  }
+            }
+
+            &--total {
+                  margin-top: c.rem(48);
+                  display: flex;
+                  justify-content: center;
+                  article {
+                        border: c.rem(1) solid var(--clr-primary);
+                        border-radius: var(--border-radius);
+                        padding: c.rem(24) c.rem(48);
+
+                        @include c.breakpoint-down(xsmall) {
+                              padding: c.rem(12.8);
+
+                              h4,h5,p {
+                                    font-size: c.rem(16);
+                              }
+
+                        }
+
+                        h4, h5, p {
+                              display: grid;
+                              grid-template-columns: c.rem(200) 1fr;
+                              
+                        }
+                        p {
+                              text-transform: capitalize;
+                        }
+                  }
+                  
+            }
+      }
+}

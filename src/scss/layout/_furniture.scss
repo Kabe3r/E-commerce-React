@@ -1,0 +1,147 @@
+@use "../util" as f;
+
+.furniture {
+	margin-top: f.rem(80);
+	text-align: center;
+	height: 100%;
+
+	@include f.breakpoint(xlarge) {
+		margin-top: f.rem(160);
+	}
+
+	h1 {
+		margin-top: f.rem(32);
+		width: 66.6666%;
+		display: inline-block;
+		font-size: f.rem(24);
+		line-height: 1.2;
+		font-weight: 400;
+		line-height: 1.2;
+		animation: upwards 1s ease-in-out;
+
+		@include f.breakpoint(medium) {
+			font-size: f.rem(32);
+		}
+
+	}
+
+	&--content {
+		display: grid;
+		grid-template-areas:
+			"figure"
+			"text";
+		gap: f.rem(30);
+		justify-content: center;
+		margin-top: f.rem(80);
+		
+		
+		@include f.breakpoint(xlarge) {
+			margin-top: f.rem(160);
+			display: grid;
+			gap: f.rem(120);
+			grid-template-columns: f.rem(500) f.rem(500);
+			grid-template-areas:
+				"figure text"
+				"figure text";
+		}
+
+		&--figure {
+			position: relative;
+			grid-area: figure;
+			height: 100%;
+			width: 100%;
+
+			@include f.breakpoint-down(xlarge) {
+				width: 90vw;
+				height: 40vh;
+			}
+
+			&::before {
+				content: "";
+				background: var(--clr-primary);
+				height: 100%;
+				width: 100%;
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				animation: scaleX 1s ease-in-out;
+				transform-origin: 0 100%;
+			}
+
+			img {
+				position: absolute;
+				display: block;
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+				animation: scaleX 2s ease-in-out;
+				transform-origin: 0 100%;
+			}
+		}
+
+		&--text {
+			text-align: left;
+			grid-area: text;
+
+			@include f.breakpoint-down(xlarge) {
+				text-align: center;
+			}
+
+			&--animate {
+				animation: upwards 2s ease-in-out;
+
+				h2 {
+					font-size: f.rem(32);
+					letter-spacing: -0.0083rem;
+					line-height: 1;
+					
+					@include f.breakpoint(medium) {
+						font-size: f.rem(40);
+					}
+				}
+			}
+
+			ul {
+				margin-top: f.rem(64);
+				list-style: none;
+				animation: scaleY 1.5s ease-in-out;
+				transform-origin: 20% 100%;
+
+				li {
+                              position: relative;
+					user-select: none;
+					margin-top: f.rem(32);
+					height: f.rem(32);
+					
+					@include f.breakpoint(medium) {
+						height: f.rem(48);
+					}
+
+					h5 {
+						@include f.breakpoint-down(medium) {
+							font-size: f.rem(19.2);
+						}
+					}
+				}
+				li::before {
+					background-color: var(--clr-line);
+					content: "";
+					height: f.rem(1.6);
+					left: 0;
+					position: absolute;
+					right: 0;
+					bottom: 0;
+					transform-origin: left center;
+				}
+
+				@include f.breakpoint-down(xlarge) {
+					button {
+						margin-inline: auto;
+					}
+				}
+			}
+		}
+	}
+}

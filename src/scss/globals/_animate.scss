@@ -1,0 +1,42 @@
+// Scale Downwards
+@keyframes transform {
+      0% {
+            transform: translateY(-100%);
+      }
+      100% {
+            transform: translateY(0);
+      }
+}
+
+// Scale to Right
+@keyframes scaleX {
+      0% {
+            transform: scaleX(0);
+      }
+      100% {
+            transform: scaleX(1);
+      }
+}
+
+// Scale to up 
+@keyframes scaleY {
+      0% {
+            transform: scaleY(0);
+      }
+      100% {
+            transform: scaleY(1);
+            opacity: 1;
+      }
+}
+// Translate upwards
+@keyframes upwards {
+      0% {
+            opacity: 0;
+            transform: translateY(8%);
+            
+      }
+      100% {
+            opacity: 1;
+            transform: translateY(0);
+      }
+}

@@ -1,0 +1,80 @@
+@use '../util' as f;
+
+.featured {
+      margin-top: f.rem(80);
+
+      
+      @include f.breakpoint(medium) {
+            margin-top: f.rem(160);
+                              
+      }
+ 
+      
+      &--container {
+            text-align: center;
+
+            
+            &--title {
+                  animation: upwards 2s ease-in-out;
+                  font-size: f.rem(16);            
+                  h2 {
+                        font-size: f.rem(40);
+                        letter-spacing: 0.0083em;
+                        line-height: 1.24;
+                        font-family: none;
+              
+                  }
+                  p {
+                        letter-spacing: -0.033em;
+                        line-height: 1.55;
+                  }
+                  
+            }
+            
+      }
+      
+      
+      &--products {
+            margin-top: f.rem(64);
+            font-size: f.rem(17.6);
+            gap: f.rem(30);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+
+            figure {
+              
+                  img {
+                        height: f.rem(300);
+                        width: f.rem(300);
+                        display: block;
+                        object-fit: cover;
+                        animation: upwards 3s ease-in-out;
+
+                        
+                        @include f.breakpoint-down(xsmall) {
+                          height: f.rem(200);
+                          width: f.rem(200);     
+                        }
+
+                        
+                  }   
+                  
+            }
+            
+      }
+}
+figcaption {
+      margin-top: f.rem(10);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      
+      @include f.breakpoint-down(xsmall) {
+            font-size: f.rem(14.4);
+            
+      }
+
+}

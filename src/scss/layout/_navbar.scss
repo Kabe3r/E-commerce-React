@@ -1,0 +1,187 @@
+@use '../util' as n;
+
+.navbar {
+      padding-top: n.rem(32);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      width: 100%;
+      right: 0;
+      left: 0;
+      height: auto;
+      z-index: 5;
+      color: var(--clr-white);
+      animation: upwards 2s ease-in-out;
+
+      @include n.breakpoint(large) {
+            padding-top: n.rem(64);
+      }
+      
+      @include n.breakpoint(xxlarge) {
+            justify-content: space-around;
+      }
+      
+      @include n.breakpoint-down(medium) {
+            display: block;
+            margin-top: n.rem(-48);
+      }
+      
+      @include n.breakpoint-down(small) {
+            margin-top: n.rem(-76.8);
+      }
+
+      @include n.breakpoint-height(small) {
+            display: block;
+            margin-top: n.rem(-48);
+      }
+
+      &--logo {
+            font-size: n.rem(32);
+            line-height: 1.2;
+            text-align: center;
+            
+            @include n.breakpoint(xlarge) {
+                  font-size: n.rem(40);
+            }
+
+            @include n.breakpoint-down(medium) {
+                  display: none;
+            } 
+            
+            @include n.breakpoint-height(small) {
+                  display: none;
+            }
+      }
+      
+      &--left {
+            
+            @include n.breakpoint(medium) {
+                  display: flex;
+                  align-self: center;
+            }
+            
+            @include n.breakpoint-height(small) {
+                  display: block;
+            }
+
+            .wrapper {
+                  display: flex;
+                  height: auto;
+                  
+                  @include n.breakpoint-down(medium) {
+                        display: block;
+                        margin-inline: auto;
+                  }
+
+                  @include n.breakpoint-height(small) {
+                        display: none;
+                  }
+
+                  .col-white {
+                        color: var(--clr-primary) !important;
+                  }
+            
+                  .cartBtn {
+                        visibility: hidden;
+                        
+                        @include n.breakpoint(medium) {
+                              visibility: visible;
+                        }
+                        
+                  }
+                  
+                  .authBtn {
+                        visibility: hidden;
+
+                        @include n.breakpoint(medium) {
+                              visibility: visible;
+                        }
+
+                  }
+            }
+            .menu-btn {
+                  display: block;
+                  margin-inline: auto;
+                  color: var(--clr-white);
+                  svg {
+                        font-size: n.rem(48);
+                  }
+                  @include n.breakpoint(medium) {
+                        display: none;
+                  }
+                  @include n.breakpoint-height(small) {
+                        display: block;
+                        margin-inline: auto;
+                  }
+                  @include n.breakpoint-height(medium) {
+                        margin-top: n.rem(8);
+                  }
+            }
+
+            
+            
+      }
+      
+}
+
+
+
+.sticky {
+      background-color: white;
+      color: var(--clr-primary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: n.rem(80);
+      z-index: 6;
+      position: sticky;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+
+      @include n.breakpoint-down(medium) {
+            display: block;
+      }
+
+      @include n.breakpoint-height(medium) {
+            padding-top: n.rem(16);
+            display: block;
+      }
+
+      &--logo {
+            font-size: n.rem(24);
+            color: var(--clr-primary) !important;
+            br {
+                  display: none;
+            }
+            @include n.breakpoint-down(medium) {
+                  display: none;
+            } 
+            
+            @include n.breakpoint-height(small) {
+                  display: none;
+            }
+      }
+
+            .menu-btn {
+                  margin-top: n.rem(-48);
+                  color: var(--clr-black);
+
+                  
+                  @include n.breakpoint-height(medium) {
+                        margin-top: n.rem(-64);
+                  }
+                  @include n.breakpoint-height(small) {
+                        margin-top: 0;
+                  }
+            }
+}
+
+.container {
+      @include n.breakpoint-down(medium) {
+            padding-inline: 0;
+
+      }
+}
