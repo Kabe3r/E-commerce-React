@@ -9,13 +9,10 @@ const SingleProduct = () => {
       const navigate = useNavigate();
       const { singleProductLoading: loading, singleProductError: error, singleProduct: product, fetchSingleProduct } = useProductsContext();
 
-      // console.log(id)
       useEffect(() => {
        fetchSingleProduct(`${process.env.REACT_APP_SINGLE_PRODUCT_URL}${id}`)
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [id]);
-
-
-      // recrfxv3EwpvJwvjq
 
       useEffect(() => {
             if (error) {

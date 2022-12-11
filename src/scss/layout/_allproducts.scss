@@ -40,7 +40,7 @@
 		
 		
 		@include a.breakpoint(xlarge) {
-			grid-template-columns: 500px 500px;
+			grid-template-columns: a.rem(500) a.rem(500);
 		}
 		
 		@include a.breakpoint-down(large) {
@@ -55,7 +55,7 @@
 
 			h2 {
 				font-size: a.rem(32);
-				letter-spacing: -0.00883em;
+				letter-spacing: a.rem(0.14128);
 				line-height: 1.24;
 				text-align: center;
 				padding-inline: a.rem(5);

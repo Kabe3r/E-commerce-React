@@ -4,14 +4,13 @@ import { FaShoppingCart, FaUserMinus, FaUserPlus } from 'react-icons/fa';
 import { BsBagCheckFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
-const Links = ({ nav, color }) => {
-      const { totalItems } = useCartContext();
+const Links = ({ itemNavBar, color, closeSidebar }) => {
+      const { totalItems, clearCart } = useCartContext();
       const { loginWithRedirect, logout, myUser } = useUserContext();
-
 
       return (
             <div className="wrapper">            
-            <Link to="/cart" style={{ color: color }} className={`${nav ? 'cartBtn col-white' : 'cartBtn'}`}>
+            <Link to="/cart" style={{ color: color }} className={`${itemNavBar ? 'cartBtn col-white' : 'cartBtn'}`} onClick={closeSidebar}>
                         Cart
                         <span className='cartCont'>
                         <FaShoppingCart />
@@ -21,13 +20,17 @@ const Links = ({ nav, color }) => {
                         </span>
                   </Link>
                   {myUser ? (
-                        <button style={{ color: color }} className={`${nav ? 'authBtn col-white': 'authBtn'}`} onClick={() => logout({ returnTo: window.location.origin })}>Logout <FaUserMinus /></button>
+                        <button style={{ color: color }} className={`${itemNavBar ? 'authBtn col-white': 'authBtn'}`} 
+                        onClick={() => {
+                        clearCart()
+                        logout({ returnTo: window.location.origin })}}>           
+                        Logout <FaUserMinus /></button>
                     )  : (
-                  <button style={{ color: color }} className={`${nav ? 'authBtn col-white': 'authBtn'}`} onClick={loginWithRedirect}>
+                  <button style={{ color: color }} className={`${itemNavBar ? 'authBtn col-white': 'authBtn'}`} onClick={loginWithRedirect}>
                         Login <FaUserPlus />
                   </button>
                     )} 
-                  {myUser && <Link to='/checkout' style={{ color: color}} className={`${nav ? 'authBtn col-white': 'authBtn'}`}>
+                  {myUser && <Link to='/checkout' style={{ color: color}} className={`${itemNavBar ? 'authBtn col-white': 'authBtn'}`} onClick={closeSidebar}>
                   Checkout<BsBagCheckFill />
                   </Link>} 
             </div>

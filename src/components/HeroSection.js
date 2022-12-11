@@ -1,3 +1,4 @@
+import React from 'react';
 import mainImg  from '../images/mainImg.jpg';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
@@ -33,12 +34,11 @@ const Hero = () => {
                   <span>Home</span>
                   </h1>
                   <div>
+                  <Link to='/cart' className='link-1'>
                   <button className='btn-lg'>
-                  <Link to='cart' className='link-1'>
                   buy now
+                  </button>  
                   </Link>
-                  </button>
-                
                   </div>
                    </div>
                   </div>

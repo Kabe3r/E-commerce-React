@@ -1,31 +1,15 @@
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from 'react-icons/fa'
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useProductsContext } from '../Contexts/context/products_context'
 
-
-const Gallery = () => {
+const Gallery = ({itemGallery, galleryRef}) => {
       const { products } = useProductsContext();
-      const [gallery, setGallery] = useState(false);
       const [index, setIndex] = useState(0);
 
-
-      useEffect(() => {
-            const onScroll = () => {
-                  if (window.scrollY > 1400) {
-                        setGallery(true);
-                  }
-            }
-
-            window.addEventListener('scroll', onScroll);
-            return () => window.removeEventListener('scroll', onScroll);  
-      }, []);
-
-
-
       return (
-            <section className="gallery">
-            {gallery && 
-            <div className="gallery--imgs">
+            <section className="gallery" ref={galleryRef}>
+            {itemGallery && 
+            <div className='gallery--imgs'>
             <figure className="gallery--imgs--cover">
             {products.map((product, ind) => {
                   return (

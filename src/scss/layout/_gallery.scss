@@ -58,6 +58,7 @@
 				@include g.breakpoint(large) {
 					height: 92vh;
 				}
+			
 			}
 		}
 		
@@ -83,9 +84,9 @@
 			}
 
 			button {
-				 background: transparent;
-				 border: none;
-				 cursor: pointer;
+				//  background: transparent;
+				//  border: none;
+				//  cursor: pointer;
 			}
 			.icon {
 				margin-left: g.rem(16);

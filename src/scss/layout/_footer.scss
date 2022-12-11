@@ -22,7 +22,7 @@
 
             h3 {
                   font-size: f.rem(19.2);
-                  letter-spacing: -0.059em;
+                  letter-spacing: f.em(-0.944);
                   line-height: 1.5;
 
                   span {
@@ -63,13 +63,13 @@
                         text-align: center;
 
                         p {
-                              padding-top: 18px;
+                              padding-top: f.rem(18);
                         }
                   }
                   
                   p {
                         font-size: f.rem(16);
-                        letter-spacing: -0.033em;
+                        letter-spacing: f.em(-0.528);
                         line-height: 1.55;
                         width: 20%;
 

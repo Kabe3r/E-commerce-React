@@ -2,12 +2,12 @@ import { useProductsContext } from '../Contexts/context/products_context';
 import Links from './Links';
 import { VscMenu } from 'react-icons/vsc';
 
-const CartBtns = ({ nav, color }) => {
+const CartBtns = ({ itemNavBar, color }) => {
       const { openSidebar } = useProductsContext();
       
       return (
             <>
-            <Links nav={nav} color={color}/>
+            <Links itemNavBar={itemNavBar} color={color}/>
                   <button className='menu-btn' style={{ color: color }} onClick={openSidebar}>
                   <VscMenu />
                   </button>

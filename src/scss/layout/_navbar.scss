@@ -69,10 +69,6 @@
                   display: flex;
                   height: auto;
                   
-                  @include n.breakpoint-down(medium) {
-                        display: block;
-                        margin-inline: auto;
-                  }
 
                   @include n.breakpoint-height(small) {
                         display: none;
@@ -110,16 +106,20 @@
                   @include n.breakpoint(medium) {
                         display: none;
                   }
-                  @include n.breakpoint-height(small) {
-                        display: block;
-                        margin-inline: auto;
+                  @include n.breakpoint-height(xlarge) {
+                        margin-top: n.rem(34);
                   }
                   @include n.breakpoint-height(medium) {
-                        margin-top: n.rem(8);
+                        margin-top: n.rem(40);
+                  }
+                  @include n.breakpoint-height(xmedium) {
+                        margin-top: n.rem(25);
+                  }
+                  @include n.breakpoint-height(small) {
+                        display: block;
+                        margin-top: n.rem(4);
                   }
             }
-
-            
             
       }
       
@@ -128,7 +128,7 @@
 
 
 .sticky {
-      background-color: white;
+      background: var(--clr-white);
       color: var(--clr-primary);
       display: flex;
       justify-content: space-between;
@@ -142,16 +142,15 @@
       left: 0;
 
       @include n.breakpoint-down(medium) {
+            // margin-top: n.rem(40);
             display: block;
       }
 
-      @include n.breakpoint-height(medium) {
-            padding-top: n.rem(16);
+      @media (max-width: 1024px) and (max-height: 650px) {
             display: block;
       }
 
       &--logo {
-            font-size: n.rem(24);
             color: var(--clr-primary) !important;
             br {
                   display: none;
@@ -166,16 +165,14 @@
       }
 
             .menu-btn {
-                  margin-top: n.rem(-48);
-                  color: var(--clr-black);
+                  margin-top: n.rem(-10);
+                  color: var(--clr-black) !important;
 
                   
-                  @include n.breakpoint-height(medium) {
-                        margin-top: n.rem(-64);
+                  @media (max-width: 1024px) and (max-height: 610px) {
+                        padding-top: n.rem(12);
                   }
-                  @include n.breakpoint-height(small) {
-                        margin-top: 0;
-                  }
+            
             }
 }
 

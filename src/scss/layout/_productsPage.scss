@@ -3,12 +3,11 @@
 .product {
 	display: grid;
 	gap: p.rem(96) p.rem(24);
-	margin: p.rem(300) auto;
 	font-size: p.rem(16);
-
+	
 	@include p.breakpoint(medium) {
-			grid-template-columns: auto auto;
-                  justify-items: center;
+		grid-template-columns: auto auto;
+		justify-items: center;
 	}
 
 	&--grid {
@@ -184,7 +183,7 @@
 					text-underline-offset: p.rem(8);
 				}
 				.company {
-					background: white;
+					background: var(--clr-white);
 					border-radius: p.rem(6);
 					border-color: transparent;
 					padding: p.rem(4);

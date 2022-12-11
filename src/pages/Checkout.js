@@ -1,22 +1,20 @@
-import { BsTypeH1 } from "react-icons/bs"
-import { Link } from 'react-router-dom';
+import { useCartContext } from "../Contexts/context/cart_context";
+import { CartEmpty, StripeCheckout } from '../components';
+
 
 const Checkout = () => {
+      const { cart } =  useCartContext();
+
+      if (cart.length < 1) {
+            return (
+                  <CartEmpty />
+            );
+      }
+
       return (
-            <>
-            <h1 style={{ color: 'purple'}}>
-                  Ayeen
-            </h1>
-            <h1 style={{ color: 'purple'}}>
-                  Ayeen
-            </h1>
-            <h1 style={{ color: 'purple'}}>
-                  Ayeen
-            </h1>
-            <h1 style={{ color: 'purple'}}>
-                  Ayeen
-            </h1>
-            </>
+            <section className="checkout">
+            <StripeCheckout />
+            </section>    
       )
 }
 

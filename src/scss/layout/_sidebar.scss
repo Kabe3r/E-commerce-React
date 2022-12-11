@@ -8,7 +8,7 @@
       bottom: 0;
       width: 100%;
       color: var(--clr-white);
-      transition: all 0.4s linear;
+      transition: var(--transition);
       transform: translate(-100%);
       z-index: -1;
 
@@ -41,22 +41,6 @@
                               text-decoration: underline;
                               text-underline-offset: s.rem(20);
                         }
-                        
-                        // ul {
-                        //       display: flex;
-                        //       justify-content: space-evenly;
-                        //       margin-top: 6rem;
-                              
-                        //       li {
-                        //             list-style: none;
-                        //             cursor: pointer;
-                                    
-                        //             &:hover {
-                        //                   color: var(--clr-hover);
-                        //                   transition: all 0.5s linear;
-                        //             }
-                        //       }
-                        // }
                   }
             }
       }

@@ -1,14 +1,20 @@
 @use '../util/' as c;
 
 .cart {
-      margin-top: c.rem(300);
+      height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       
       &--empty {
-            text-align: center;
-
             h2 {
                   margin-bottom: c.rem(32);
                   text-transform: none;
+                  text-transform: capitalize;
+
+                  @include c.breakpoint-down(medium) {
+                        font-size: c.rem(25);
+                  }
             }
             button {
                   margin-inline: auto;
@@ -17,6 +23,14 @@
 }
 
 .page {
+      margin-top: c.rem(200);
+      font-size: c.rem(16);
+      
+      @include c.breakpoint(medium) {
+            margin-top: c.rem(300);
+            font-size: c.rem(25);
+      }
+
       &--content {
             hr {
                   margin-bottom: c.rem(32);
@@ -169,12 +183,7 @@
                         padding: c.rem(24) c.rem(48);
 
                         @include c.breakpoint-down(xsmall) {
-                              padding: c.rem(12.8);
-
-                              h4,h5,p {
-                                    font-size: c.rem(16);
-                              }
-
+                              padding: c.rem(6);
                         }
 
                         h4, h5, p {
@@ -185,6 +194,9 @@
                         p {
                               text-transform: capitalize;
                         }
+                  }
+                  button {
+                        margin-inline: auto;
                   }
                   
             }

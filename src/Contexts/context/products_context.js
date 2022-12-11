@@ -51,7 +51,6 @@ export const ProductsProvider = ({ children }) => {
             try {
                   const response = await axios.get(url);
                   const singleProduct = await response.data;
-                  console.log(singleProduct)
                   dispatch({ type: GET_SINGLE_PRODUCT_SUCCESS, payload: singleProduct })
             }
             catch (err) {
@@ -71,12 +70,15 @@ export const ProductsProvider = ({ children }) => {
             fetchProducts(url);
       }, []);
 
+     
+
+
       return (
             <ProductsContext.Provider value={{
                   ...state,
                   fetchSingleProduct,
                   openSidebar,
-                  closeSidebar
+                  closeSidebar,
             }}>
                   {children}
             </ProductsContext.Provider>

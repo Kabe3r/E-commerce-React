@@ -21,7 +21,7 @@ body {
       font-style: normal;
       font-family: b.$font-body;
       line-height: 1;
-      font-size: 1.8rem;
+      font-size: b.rem(28.8);
       position: absolute;
       height: 100%;
 }
@@ -34,6 +34,33 @@ button {
 }
 
 // * Global Classes * \\
+
+.loading-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+
+      
+      .loading {
+            margin-inline: auto;
+            border: 16px solid var(--clr-primary);
+            border-radius: 50%;
+            border-top: 16px solid var(--clr-secondary);
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+      }
+      
+      @keyframes spin {
+            0% {
+                  transform: rotate(0deg);
+            }
+            100% {
+                  transform: rotate(360deg);
+            }
+      }
+}
 
 .wrapper {
       display: flex;
@@ -81,10 +108,10 @@ button {
             display: flex;
             align-items: center;
             font-size: b.rem(19.2);
-            letter-spacing: 0.08rem;
+            letter-spacing: b.rem(1.28);
             color: var(--clr-white);
-            text-decoration: none;
             padding-left: b.rem(20);
+            text-decoration: none;
 
             svg {
                   margin-left: b.rem(10);
@@ -93,14 +120,12 @@ button {
 }
 
 .color-btn {
-      // display: inline-block;
       width: b.rem(24);
       height: b.rem(24);
       border-radius: 50%;
       margin-right: b.rem(8) !important;
       background: #222;
       border: none;
-      cursor: pointer;
       opacity: 0.5;
       display: flex !important;
       justify-content: center;
@@ -116,7 +141,6 @@ button {
 }
 
 .btn-lg {
-      background: transparent;
       border: b.rem(1.6) solid var(--clr-primary
       );
       border-radius: b.rem(6.4);
@@ -134,9 +158,7 @@ button {
       line-height: 1.23;
       text-transform: uppercase;
       user-select: none;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      cursor: pointer;
+      transition: var(--transition);
 
       @include b.breakpoint(medium) {
             font-size: b.rem(11.2);
@@ -152,26 +174,28 @@ button {
 }
 
 .btn-xl {
-      background: transparent;
       border: b.rem(1) solid var(--clr-primary
       );
-      // border-radius: 5px;
       color: var(--clr-white);
       display: table;
       overflow: hidden;
-      letter-spacing: b.rem(4.8);
-      height: b.rem(70);
-      width: b.rem(250);
+      letter-spacing: b.rem(3);
+      height: b.rem(50);
+      width: b.rem(190);
       margin-top: b.rem(48);
       position: relative;
       font-weight: 700;
-      font-size: b.rem(10.4);
+      font-size: b.rem(10);
       line-height: 1.23;
       text-transform: uppercase;
       user-select: none;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      cursor: pointer;
+      transition: var(--transition);
+
+      @include b.breakpoint(medium) {
+            font-size: b.rem(11.2);
+            height: b.rem(70);
+            width: b.rem(250);
+      }
       
       &:active {
             cursor: not-allowed;
@@ -198,7 +222,7 @@ button {
       height: 0;
       z-index: -1;
       background-color: var(--clr-primary);
-      transition: all 0.3s ease;
+      transition: var(--transition);
       
 }
 .btn:hover::after {
@@ -219,7 +243,6 @@ button {
             background: #222;
             border-color: transparent;
             color: var(--clr-white);
-            cursor: pointer;
             width: b.rem(24);
             height: b.rem(24);
             display: flex;
@@ -231,12 +254,11 @@ button {
 
 .btn-cart {
       color: var(--clr-secondary);
-      text-decoration: none;
       padding: b.rem(16) b.rem(24);
-      font-size: b.rem(16);
+      font-size: b.rem(12);
+      text-decoration: none;
       border: b.rem(1) solid var(--clr-primary);
       border-radius: b.rem(6);
-      text-transform: capitalize;
 }
 
 .container {
@@ -271,6 +293,11 @@ figure {
       }
 }
 
+.logo {
+      text-decoration: none;
+      color: inherit;
+}
+
 .link {
       position: absolute;
       top: 50%;
@@ -282,12 +309,12 @@ figure {
       width: b.rem(40);
       height: b.rem(40);
       border-radius: 50%;
-      transition: all 0.3s linear;
+      transition: var(--transition);
+      background: var(--clr-primary);
       opacity: 0;
-      cursor: pointer;
 
       svg {
-            font-size: b.rem(48);
+            font-size: b.rem(22);
             color: var(--clr-white);
       }
 }

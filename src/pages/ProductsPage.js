@@ -1,4 +1,4 @@
-import { Filters, ProductList, Sort, PageHero } from '../components';
+import { Filters, ProductList, Sort } from '../components';
 
 
 const Products = () => {

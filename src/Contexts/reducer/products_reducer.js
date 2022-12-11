@@ -1,5 +1,4 @@
 import {
-      CHANGE_COLOR,
       SIDEBAR_OPEN,
       SIDEBAR_CLOSE,
       GET_PRODUCTS_BEGIN,
@@ -37,7 +36,7 @@ const products_reducer = (state, action) => {
                   return { ...state, isSidebarOpen: true };
                         
             case SIDEBAR_CLOSE:
-                  return { ...state, isSidebarOpen: false };
+                  return { ...state, isSidebarOpen: false };  
 
             default:
 

@@ -1,21 +1,16 @@
-import { Hero, Furniture, Gallery, Table, Products, FeaturedProducts } from '../components';
-import { useState } from 'react';
+import { Hero, Furniture, Gallery, Products, FeaturedProducts } from '../components';
+import useOnScreen from '../useOnScreen';
 
 const HomePage = () => {
-      const [color, setColor] = useState({ color: '#000'});
-      
-      const changeColor = () => {
-            setColor({ color });
-      }
+      const { itemFurniture, furnitureRef, itemGallery, galleryRef, itemProducts, productsRef, itemFeature, featureRef } = useOnScreen();
 
       return (
-            <main>
+            <main> 
             <Hero />
-            <Furniture />
-            <Gallery />
-            <Table />
-            <Products />
-            <FeaturedProducts />
+            <Furniture itemFurniture={itemFurniture} furnitureRef={furnitureRef}/>
+            <Gallery  itemGallery={itemGallery} galleryRef={galleryRef}/>
+            <Products itemProducts={itemProducts} productsRef={productsRef} />
+            <FeaturedProducts itemFeature={itemFeature} featureRef={featureRef}/>
             </main>
       )
 }

@@ -24,7 +24,6 @@ const Filters = () => {
 	const colors = getUniqueValues(allProducts, "colors");
 
 
-	console.log(text, category)
 	return (
 		<section className="product--filter">
 		<div className="product--filter--content">

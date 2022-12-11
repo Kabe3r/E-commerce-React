@@ -6,7 +6,6 @@ import CartTotals from './CartTotals';
 
 const CartContent = () => {
       const { cart, clearCart } = useCartContext();
-console.log(cart)
 
       return (
             <section className='page--content'>

@@ -1,7 +1,7 @@
 import './scss/styles.scss';
 import {Header, Navbar, Sidebar, Footer} from './components';
-import { BrowserRouter as Router , Routes, Route } from 'react-router-dom';
-import { Home, Single, Error, Products, Cart, AuthWrapper, ProtectedRoute, Checkout } from './pages';
+import { BrowserRouter as Router , Routes, Route, Navigate } from 'react-router-dom';
+import { Home, Single, Products, Cart, AuthWrapper, ProtectedRoute, Checkout } from './pages';
 
 function App() {
   return (
@@ -12,13 +12,13 @@ function App() {
     <Sidebar />
     <Routes>
     <Route path='/' element={<Home />}  />
-    <Route path='products' element={<Products />} />
-    <Route path='products/:id' element={<Single />} />
-    <Route path='cart' element={<Cart />} />
+    <Route path='/products' element={<Products />} />
+    <Route path='/products/:id' element={<Single />} />
+    <Route path='/cart' element={<Cart />} />
     <Route path='/' element={<ProtectedRoute />}>
       <Route path='checkout' element={<Checkout />} />
     </Route>
-    <Route path='error' element={<Error />} />
+    <Route path='*' element={<Navigate to='/' />} />
     </Routes>
     <Footer />
     </Router>

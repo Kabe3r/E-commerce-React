@@ -3,7 +3,7 @@ const Header = () => {
             <header>
             <p>
             <strong>
-            NOW OPEN in the Heart of Flagstaff – High Country Motor Lodge – An All New Boutique Hotel Experience
+            NOW OPEN in the Heart of Flagstaff – High Country Motor Lodge – An All New E-Commerce Store Experience
             </strong>
             </p>
             </header>

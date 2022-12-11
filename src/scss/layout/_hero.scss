@@ -72,11 +72,11 @@
 			left: 0;
 			margin: 0;
 			right: 0;
-			top: 22%;
+			top: 25%;
 		}
 
 		@include h.breakpoint-height(medium) {
-			top: 9%;
+			top: 14%;
 		}
 
 		&--video {
@@ -146,18 +146,15 @@
 
 			
 			h1 {
-				// display: grid;
 				text-align: center;
-				font-size: h.rem(30);
+				font-size: h.rem(28.4);
 				letter-spacing: h.em(0.0656);
 				line-height: 1.21;
 				font-family: auto;
-				// margin-top: 0;
-				// position: absolute;
 				
 				@include h.breakpoint(medium) {
 					font-size: h.rem(50);
-					letter-spacing: h.rem(-0.128);
+					letter-spacing: h.em(-0.128);
 					line-height: 1.12;
 					margin-left: h.rem(-40);
 					text-align: left;	
@@ -165,7 +162,7 @@
 				
 				@include h.breakpoint(large) {
 					font-size: h.rem(60);
-					letter-spacing: h.rem(-0.16);
+					letter-spacing: h.em(-0.16);
 					line-height: 1;
 					margin-left: h.rem(10);	
 				}

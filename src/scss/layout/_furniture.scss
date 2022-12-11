@@ -94,7 +94,7 @@
 
 				h2 {
 					font-size: f.rem(32);
-					letter-spacing: -0.0083rem;
+					letter-spacing: f.em(-0.1328);
 					line-height: 1;
 					
 					@include f.breakpoint(medium) {
